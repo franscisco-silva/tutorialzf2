@@ -1,0 +1,21 @@
+<fieldset>
+    <legend>Detalhes Contato ID <?php echo $this->id; ?></legend>
+
+    <dl class="dl-horizontal">
+        <dt>Nome:</dt>
+        <dd><?php echo $this->form["nome"]; ?></dd>
+        <dt>Telefone Principal:</dt>
+        <dd><?php echo $this->form["telefone_principal"]; ?></dd>
+        <dt>Telefone Secundario:</dt>
+        <dd><?php echo $this->form["telefone_secundario"]; ?></dd>
+        <dt>Data Criação:</dt>
+        <dd><?php echo $this->form["data_criacao"]; ?></dd>
+        <dt>Data Atualização:</dt>
+        <dd><?php echo $this->form["data_atualizacao"]; ?></dd>
+    </dl>
+
+    <div class="form-actions">
+        <a href="<?php echo $this->url('contatos', array('action' => 'editar', 'id' => $this->id)); ?>" class="btn btn-warning">Editar Contato</a>
+        <a href="<?php echo $this->url('contatos'); ?>" class="btn">Voltar</a>
+    </div>
+</fieldset>
