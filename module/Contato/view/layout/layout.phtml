@@ -31,7 +31,20 @@
                 <h1>Agenda de Contatos</h1>
             </div>
             <div class="content">
-                <?php echo $this->content;?>
+                <?php
+                $children = $this->viewModel()->getCurrent()->getChildren();
+                $message = $children[0]->message;
+                ?>
+                <?php if ($message): ?>
+                    <div class="alert <?php echo key($message); ?>">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong><?php echo $message[key($message)]; ?></strong>
+                    </div>
+                <?php endif; ?>
+                
+                <?php 
+                    echo $this->content;
+                ?>
             </div>
         </div>
         
